@@ -1,0 +1,61 @@
+button {
+  padding: 15px 32px;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 5px 5px #282c34;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.dark-purple {
+  background-color: #351c75;
+  color: white;
+}
+
+.light-purple {
+  background-color: #674ea7;
+  color: white;
+}
+
+.coral {
+  background-color: #c06666;
+  color: white;
+}
+
+.orange {
+  background-color: #f6b26c;
+}
+
+.yellow {
+  background-color: #fdff00;
+}
+
+.white {
+  background-color: #fff;
+}
