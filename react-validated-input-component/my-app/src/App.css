@@ -1,0 +1,29 @@
+input {
+  margin-left: 2em;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.final-message {
+  color: red;
+  font-size: 10px;
+}
+
+.align {
+  display: flex;
+  align-items: center;
+}
