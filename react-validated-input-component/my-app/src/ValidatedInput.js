@@ -4,7 +4,6 @@ import x from './x.svg'
 
 export default function ValidatedInput(){
 const [password, setPassword] = useState('');
-  // console.log(password)
   var finalMessage = ' ';
   var icon = check;
 
@@ -15,10 +14,6 @@ const [password, setPassword] = useState('');
     finalMessage = "Your password is too short."
     icon = x;
   }
-
-// const finalMessage  = password === '' ? "A password is required."
-//     : password.length < 8 ? "Your password is too short."
-//     : " "
 
 return (
     <>
