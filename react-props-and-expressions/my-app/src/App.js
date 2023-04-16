@@ -1,20 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
-
-function CustomButton({text, color}) {
-  return (
-    <button className="customButton" style={{
-      backgroundColor: {color}
-    }}> {text}</button>
-  )
-}
+import CustomButton from './CustomButton';
 
 function App() {
   return (
     <div>
-      <CustomButton text="I" color="blue" />
-      <CustomButton text="know" color="green" />
-      <CustomButton text="react!" color="orange" />
+      <CustomButton text="I" backgroundColor="blue" />
+      <CustomButton text="know" backgroundColor="green" />
+      <CustomButton text="react!" backgroundColor="orange" />
     </div>
   );
 }
