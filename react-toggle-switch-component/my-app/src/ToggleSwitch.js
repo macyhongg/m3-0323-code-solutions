@@ -2,27 +2,15 @@ import { useState } from 'react';
 
 export default function ToggleSwitch() {
   const [toggleOff, setToggleOff] = useState(false);
-  console.log('Current state: ', toggleOff)
+  const status = toggleOff ? 'on' : 'off'
 
-  function handleClick() {
-    setToggleOff(!toggleOff);
-  }
-
-  if (!toggleOff) {
-    return (
-      <button className='toggle-off' onClick={handleClick}>
-        <button className='slider-off'>
-        </button>
-        <span>OFF</span>
+  return (
+    <button
+      className={'toggle-' + status}
+      onClick={() => setToggleOff(!toggleOff)}>
+      <button className={'slider-' + status}>
+        <span>{status}</span>
       </button>
-    )
-  } else {
-    return (
-      <button className='toggle-on' onClick={handleClick}>
-        <button className='slider-on'>
-        </button>
-        <span>ON</span>
-      </button>
-    )
-  }
+    </button>
+  )
 }
