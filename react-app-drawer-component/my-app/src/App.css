@@ -3,12 +3,21 @@ body {
   font-size: 1em;
 }
 
+h1 {
+  flex-grow: 2;
+  text-align: center;
+}
+
 h2 {
   text-transform: uppercase;
 }
 
 ul {
   padding-left: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 a {
@@ -31,6 +40,8 @@ svg {
   width: 100%;
   height: 100vh;
   pointer-events: all;
+  display: flex;
+  align-items: baseline;
 }
 
 .page-dim {
@@ -40,6 +51,8 @@ svg {
   opacity: 0.5;
   z-index: 0;
   pointer-events: all;
+  display: flex;
+  align-items: baseline;
 }
 
 .menu {
