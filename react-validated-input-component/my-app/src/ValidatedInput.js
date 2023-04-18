@@ -7,24 +7,23 @@ const [password, setPassword] = useState('');
   var finalMessage = ' ';
   var icon = x;
 
-  if (password.length > 8
-      && (/([!@#$%^&*()]).+/g.test(password))
-      && (/([0-9]).+/g.test(password))
-      && (/([A-Z]).+/g.test(password))) {
-    finalMessage = ''
-    icon = check
-  }
-    else if (password === '') {
+   if (password === '') {
     finalMessage = "A password is required."
   } else if (password.length < 8) {
     finalMessage = "Your password is too short."
-  } else if ((/([A-Z]).+/g.test(password)) === false) {
+  } else if ((/([A-Z])/.test(password)) === false) {
     finalMessage = "Password must contain a capital letter."
-  } else if ((/([0-9]).+/g.test(password)) === false) {
+  } else if ((/([0-9])/.test(password)) === false) {
     finalMessage = "Password must contain a digit."
-  } else if ((/([!@#$%^&*()]).+/g.test(password)) === false) {
+  } else if ((/([!@#$%^&*()])/.test(password)) === false) {
     finalMessage = "Password must contain a special character."
-  }
+   } else if (password.length > 8
+     && (/([!@#$%^&*()])/.test(password))
+     && (/([0-9])/.test(password))
+     && (/([A-Z])/.test(password))) {
+     finalMessage = '';
+     icon = check;
+   }
 
 return (
     <>
@@ -33,7 +32,8 @@ return (
     name="password"
     value={password}
     type="password"
-    onChange={e => setPassword(e.target.value)}
+    onChange={e => {setPassword(e.target.value);
+              console.log(password)}}
     />
     <img src={icon} alt="icon" />
     </div>
