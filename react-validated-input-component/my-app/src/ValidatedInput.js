@@ -5,26 +5,36 @@ import x from './x.svg'
 export default function ValidatedInput(){
 const [password, setPassword] = useState('');
   var finalMessage = ' ';
-  var icon = check;
+  var icon = x;
 
-  if (password === '') {
+   if (password === '') {
     finalMessage = "A password is required."
-    icon = x;
   } else if (password.length < 8) {
     finalMessage = "Your password is too short."
-    icon = x;
-  }
+  } else if ((/([A-Z])/.test(password)) === false) {
+    finalMessage = "Password must contain a capital letter."
+  } else if ((/([0-9])/.test(password)) === false) {
+    finalMessage = "Password must contain a digit."
+  } else if ((/([!@#$%^&*()])/.test(password)) === false) {
+    finalMessage = "Password must contain a special character."
+   } else if (password.length > 8
+     && (/([!@#$%^&*()])/.test(password))
+     && (/([0-9])/.test(password))
+     && (/([A-Z])/.test(password))) {
+     finalMessage = '';
+     icon = check;
+   }
 
 return (
     <>
     <div className='align'>
       <input
-    name="password"
-    value={password}
-    type="password"
-    onChange={e => setPassword(e.target.value)}
-    />
-    <img src={icon} alt="icon" />
+        name="password"
+        value={password}
+        type="password"
+        onChange={e => setPassword(e.target.value)}
+       />
+      <img src={icon} alt="icon" />
     </div>
     <span className='final-message'>{finalMessage}</span>
     </>
