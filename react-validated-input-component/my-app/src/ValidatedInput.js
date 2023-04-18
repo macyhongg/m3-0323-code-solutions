@@ -29,13 +29,12 @@ return (
     <>
     <div className='align'>
       <input
-    name="password"
-    value={password}
-    type="password"
-    onChange={e => {setPassword(e.target.value);
-              console.log(password)}}
-    />
-    <img src={icon} alt="icon" />
+        name="password"
+        value={password}
+        type="password"
+        onChange={e => setPassword(e.target.value)}
+       />
+      <img src={icon} alt="icon" />
     </div>
     <span className='final-message'>{finalMessage}</span>
     </>
