@@ -5,14 +5,25 @@ import x from './x.svg'
 export default function ValidatedInput(){
 const [password, setPassword] = useState('');
   var finalMessage = ' ';
-  var icon = check;
+  var icon = x;
 
-  if (password === '') {
+  if (password.length > 8
+      && (/([!@#$%^&*()]).+/g.test(password))
+      && (/([0-9]).+/g.test(password))
+      && (/([A-Z]).+/g.test(password))) {
+    finalMessage = ''
+    icon = check
+  }
+    else if (password === '') {
     finalMessage = "A password is required."
-    icon = x;
   } else if (password.length < 8) {
     finalMessage = "Your password is too short."
-    icon = x;
+  } else if ((/([A-Z]).+/g.test(password)) === false) {
+    finalMessage = "Password must contain a capital letter."
+  } else if ((/([0-9]).+/g.test(password)) === false) {
+    finalMessage = "Password must contain a digit."
+  } else if ((/([!@#$%^&*()]).+/g.test(password)) === false) {
+    finalMessage = "Password must contain a special character."
   }
 
 return (
