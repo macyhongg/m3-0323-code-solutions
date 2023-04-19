@@ -3,25 +3,23 @@ import { FaBars } from 'react-icons/fa';
 
 export default function AppDrawer({menu, items}){
   const [openDrawer, setOpenDrawer] = useState(false);
-  const item = items.map(x => <ul onClick={() => onSelect(x)}>{x}</ul>)
+  const [header, setHeader] = useState('Welcome')
+  const item = items.map(x => <ul key={x} onClick={() => handleClick(x)}>{x}</ul>)
 
   function toggleDrawer() {
     setOpenDrawer(!openDrawer);
   };
 
-  function onSelect(x){
+  function handleClick(x){
     toggleDrawer();
-    var header = x;
-    // const header = x;
-    // onSelect(item);
-    // console.log('display header!', x)
+    setHeader(x);
   }
 
   return (
     <>
       <div className={openDrawer ? 'page-dim' : 'page'} onClick={openDrawer ? toggleDrawer : null }>
         <FaBars onClick={toggleDrawer}/>
-        <h1>hello</h1>
+        <h1>{header}</h1>
       </div>
       <section className={openDrawer ? 'menu menu-open' : 'menu menu-closed'}>
         <div className='menu-list'>
