@@ -1,0 +1,36 @@
+h3 {
+  text-transform: uppercase;
+}
+
+img {
+  width: 30%;
+  height: 5em;
+  margin: 0 1em;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  object-fit: cover;
+}
+
+.container {
+  text-align: center;
+  font-size: 4em;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small {
+  font-size: 1.5rem;
+}
+
+.pokeball {
+  font-size: 1.75rem;
+  transform: rotate(-45deg);
+}
+
+.indicators {
+  padding: 0 0.5rem;
+}
