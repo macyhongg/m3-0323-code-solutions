@@ -1,8 +1,16 @@
 import { FaAngleLeft, FaAngleRight, FaRegCircle} from 'react-icons/fa';
-import { useState } from 'react';
+import {Icon} from '@iconify/react';
+import { useState, useEffect } from 'react';
 
 export default function Carousel({title, images}) {
   const [index, setIndex] = useState(0)
+
+  useEffect(()=> {
+    const intervalId = setInterval(()=> {
+      nextIndex();
+    }, 3000);
+    return () => clearInterval(intervalId);
+  }, [nextIndex]);
 
   function prevIndex(){
     setIndex((index - 1 + images.length) % images.length)
@@ -15,10 +23,17 @@ export default function Carousel({title, images}) {
   function Indicators(){
     const buttons = [];
     for (let i = 0; i < images.length; i++) {
+      i === index ? buttons.push(
+        <Icon icon="mdi:pokeball"
+        className='pokeball indicators'
+        key={i}
+        onClick = {()=> setIndex(i)} />
+      ) :
       buttons.push(
         <FaRegCircle
         className='small indicators'
-        onClick={()=> setIndex(i)}
+        key={i}
+        onClick={() => setIndex(i)}
         />
       )
     }

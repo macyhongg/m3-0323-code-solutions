@@ -1,8 +1,3 @@
-.container {
-  text-align: center;
-  font-size: 4em;
-}
-
 h3 {
   text-transform: uppercase;
 }
@@ -16,6 +11,11 @@ img {
   object-fit: cover;
 }
 
+.container {
+  text-align: center;
+  font-size: 4em;
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -26,8 +26,9 @@ img {
   font-size: 1.5rem;
 }
 
-.hidden {
-  display: none;
+.pokeball {
+  font-size: 1.75rem;
+  transform: rotate(-45deg);
 }
 
 .indicators {
