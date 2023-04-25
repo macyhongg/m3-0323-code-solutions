@@ -1,34 +1,32 @@
 import { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 
-export default function AppDrawer({menu, items, page, drawer}){
+export default function AppDrawer({menu, items}){
   const [openDrawer, setOpenDrawer] = useState(false);
-  const item = items.map(x => <ul>{x}</ul>)
+  const [header, setHeader] = useState('Welcome')
+  const item = items.map(x => <ul key={x} onClick={() => handleClick(x)}>{x}</ul>)
 
-  function handleClick() {
+  function toggleDrawer() {
     setOpenDrawer(!openDrawer);
   };
 
-if (openDrawer === true) {
-  page = 'page-dim';
-  drawer = 'menu menu-open';
-  var click = handleClick;
-} else if (openDrawer === false){
-  page = 'page';
-  drawer = 'menu menu-closed';
-}
+  function handleClick(x){
+    toggleDrawer();
+    setHeader(x);
+  }
 
-    return (
-      <>
-        <div className={page} onClick={click}>
-        < FaBars onClick = {handleClick}/>
+  return (
+    <>
+      <div className={openDrawer ? 'page-dim' : 'page'} onClick={openDrawer ? toggleDrawer : null }>
+        <FaBars onClick={toggleDrawer}/>
+        <h1>{header}</h1>
       </div>
-      <div className={drawer}>
-        <div classname='menu-list'>
+      <section className={openDrawer ? 'menu menu-open' : 'menu menu-closed'}>
+        <div className='menu-list'>
           <h2>{menu}</h2>
-          <a href=''>{item}</a>
+          <li>{item}</li>
         </div>
-      </div>
-      </>
-    )
+      </section>
+    </>
+  )
   };
