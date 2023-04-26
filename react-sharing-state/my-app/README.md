@@ -1,3 +1,5 @@
+![Kapture 2023-04-16 at 01 16 32](https://user-images.githubusercontent.com/94674653/232284950-3d6aa718-89d6-428b-b439-b06a246b8272.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
