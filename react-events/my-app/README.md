@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/94674653/234463574-16ae5f2a-15a5-4de7-a450-6d36940dda8b.png)
+![Kapture 2023-03-24 at 00 44 28](https://user-images.githubusercontent.com/94674653/227456788-87077896-f939-44b3-9b19-ec693e1d7cf1.gif)
 
 # Getting Started with Create React App
 
