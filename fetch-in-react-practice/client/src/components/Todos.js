@@ -51,27 +51,21 @@ export default function Todos() {
     const status = {isCompleted: !todos[index].isCompleted}
     const req = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify(status)
     }
-    console.log('todoId:', todoId);
-    console.log('index: ', index)
-    console.log('status', status);
-  try {
-    const res = await fetch(`/api/todos/${todoId}`, req);
-    if (!res.ok) throw new Error(`Something went wrong! Error code: ${res.status}`);
-
-    const data = await res.json();
-    const newArr = todos.map((todo) => todo.todoId === todoId ? data : todo)
-    setTodos(newArr)
-    }
-    catch(err) {
+    try {
+      const res = await fetch(`/api/todos/${todoId}`, req);
+      if (!res.ok) throw new Error(`Something went wrong! Error code: ${res.status}`);
+      const data = await res.json();
+      const newArr = todos.map((todo) => todo.todoId === todoId ? data : todo)
+      setTodos(newArr)
+    } catch(err) {
       setError(err)
     } finally {
       setIsLoading(false);
     }
   }
-
 
   /* toggleCompleted:
    *  Find the index of the todo with the matching todoId in the state array.
